@@ -1,15 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="wrapper">
-        <header>
-            <h1>Hello World~!</h1>
-        </header>
-    </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dopefolio</title>
+    <meta name="description" content="Portfolio Template for Developer" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">John Doe</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="home-hero">
+      <div class="home-hero__content">
+        <h1 class="heading-primary">Hey, My name is John Doe</h1>
+        <div class="home-hero__info">
+          <p class="text-primary">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente solutions for
+            complex problems
+          </p>
+        </div>
+        <div class="home-hero__cta">
+          <a href="./#projects" class="btn btn--bg">Projects</a>
+        </div>
+      </div>
+      <div class="home-hero__socials">
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/linkedin-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/github-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/twitter-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a href="#" class="home-hero__social-icon-link">
+            <img
+              src="./assets/png/yt-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+        <div class="home-hero__social">
+          <a
+            href="#"
+            class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
+          >
+            <img
+              src="./assets/png/insta-ico.png"
+              alt="icon"
+              class="home-hero__social-icon"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="home-hero__mouse-scroll-cont">
+        <div class="mouse"></div>
+      </div>
+    </section>
+    <section id="about" class="about sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+          <span class="heading-sec__main">About Me</span>
+          <span class="heading-sec__sub">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente
+          </span>
+        </h2>
+        <div class="about__content">
+          <div class="about__content-main">
+            <h3 class="about__content-title">Get to know me!</h3>
+            <div class="about__content-details">
+              <p class="about__content-details-para">
+                Hey! It's
+                <strong>John Doe</strong>
+                and I'm a <strong> Frontend Web Developer </strong> located in
+                Los Angeles. I've done
+                <strong> remote </strong>
+                projects for agencies, consulted for startups, and collaborated
+                with talented people to create
+                <strong>digital products </strong>
+                for both business and consumer use.
+              </p>
+              <p class="about__content-details-para">
+                I'm a bit of a digital product junky. Over the years, I've used
+                hundreds of web and mobile apps in different industries and
+                verticals. Feel free to
+                <strong>contact</strong> me here.
+              </p>
+            </div>
+            <a href="./#contact" class="btn btn--med btn--theme dynamicBgClr"
+              >Contact</a
+            >
+          </div>
+          <div class="about__content-skills">
+            <h3 class="about__content-title">ParkEunho</h3>
+            <div class="skills">
+              <div class="skills__skill">HTML</div>
+              <div class="skills__skill">CSS</div>
+              <div class="skills__skill">JavaScript</div>
+              <div class="skills__skill">React</div>
+              <div class="skills__skill">SASS</div>
+              <div class="skills__skill">GIT</div>
+              <div class="skills__skill">Shopify</div>
+              <div class="skills__skill">Wordpress</div>
+              <div class="skills__skill">Google ADS</div>
+              <div class="skills__skill">Facebook Ads</div>
+              <div class="skills__skill">Android</div>
+              <div class="skills__skill">IOS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects sec-pad">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-bg">
+          <span class="heading-sec__main">Projects</span>
+          <span class="heading-sec__sub">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente
+          </span>
+        </h2>
+
+        <div class="projects__content">
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Project 1</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                facilis tempora, explicabo quae quod deserunt eius sapiente
+                praesentium.
+              </p>
+              <a
+                href="./project-1.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Case Study</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Project 2</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                facilis tempora, explicabo quae quod deserunt eius sapiente
+                praesentium.
+              </p>
+              <a
+                href="./project-2.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Case Study</a
+              >
+            </div>
+          </div>
+          <div class="projects__row">
+            <div class="projects__row-img-cont">
+              <img
+                src="./assets/jpeg/project-mockup-example.jpeg"
+                alt="Software Screenshot"
+                class="projects__row-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="projects__row-content">
+              <h3 class="projects__row-content-title">Project 3</h3>
+              <p class="projects__row-content-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                facilis tempora, explicabo quae quod deserunt eius sapiente
+                praesentium.
+              </p>
+              <a
+                href="./project-3.html"
+                class="btn btn--med btn--theme dynamicBgClr"
+                target="_blank"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact sec-pad dynamicBg">
+      <div class="main-container">
+        <h2 class="heading heading-sec heading-sec__mb-med">
+          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
+          <span class="heading-sec__sub heading-sec__sub--lt">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facilis
+            tempora explicabo quae quod deserunt eius sapiente
+          </span>
+        </h2>
+        <div class="contact__form-container">
+          <form action="#" class="contact__form">
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="name">Name</label>
+              <input
+                required
+                placeholder="Enter Your Name"
+                type="text"
+                class="contact__form-input"
+                name="name"
+                id="name"
+              />
+            </div>
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="email">Email</label>
+              <input
+                required
+                placeholder="Enter Your Email"
+                type="text"
+                class="contact__form-input"
+                name="email"
+                id="email"
+              />
+            </div>
+            <div class="contact__form-field">
+              <label class="contact__form-label" for="message">Message</label>
+              <textarea
+                required
+                cols="30"
+                rows="10"
+                class="contact__form-input"
+                placeholder="Enter Your Message"
+                name="message"
+                id="message"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn--theme contact__btn">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">John Doe</h4>
+            <p class="main-footer__short-desc">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit facilis
+              tempora explicabo quae quod deserunt
+            </p>
+          </div>
+        </div>
+
+        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
